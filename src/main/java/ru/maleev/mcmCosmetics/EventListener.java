@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class EventListener implements Listener {
+
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
@@ -46,13 +47,12 @@ public class EventListener implements Listener {
                 }
             }
         }, 0L, period);
-
-
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         Player player = e.getPlayer();
+
         if (ConfigBoard.runnables.containsKey(player.getName())) {
             ConfigBoard.runnables.get(player.getName()).cancel();
             ConfigBoard.runnables.remove(player.getName());
@@ -63,6 +63,7 @@ public class EventListener implements Listener {
     public void onWorld(PlayerChangedWorldEvent e) {
         Player player = e.getPlayer();
         World world = player.getWorld();
+        
         if (Main.getInstance().getConfig().getStringList("Scoreboard.DisabledWorlds").contains(world.getName())) {
             ConfigBoard.removeScoreboard(player);
         }
