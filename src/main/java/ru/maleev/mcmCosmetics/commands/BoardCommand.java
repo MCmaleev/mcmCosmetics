@@ -26,28 +26,25 @@ public class BoardCommand extends AbstractCommand {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.TitleUsage")));
                 return;
             }
-            else {
-                String title = ChatColor.translateAlternateColorCodes('&', args[1]);
-                String subtitle = ChatColor.translateAlternateColorCodes('&', args[2]);
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    p.sendTitle(title, subtitle);
-                }
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.TitleSent")));
+            String title = ChatColor.translateAlternateColorCodes('&', args[1]);
+            String subtitle = ChatColor.translateAlternateColorCodes('&', args[2]);
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                p.sendTitle(title, subtitle);
             }
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.TitleSent")));
         }
         if ("chat".equals(lowerCase)) {
             if (args.length < 2) {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.ChatUsage")));
                 return;
             }
-            else {
-                String message = ChatColor.translateAlternateColorCodes('&', args[1].replace("%n", "\n"));
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    String[] msg = message.split("\n");
-                    p.sendMessage(msg);
-                }
-                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.ChatSent")));
+
+            String message = ChatColor.translateAlternateColorCodes('&', args[1].replace("%n", "\n"));
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                String[] msg = message.split("\n");
+                p.sendMessage(msg);
             }
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.getInstance().getConfig().getString("Messages.ChatSent")));
         }
     }
 }
