@@ -1,0 +1,7 @@
+name: mcmCosmetics
+version: '${version}'
+main: ru.maleev.mcmCosmetics.Main
+authors: [ maleev ]
+depend: [PlaceholderAPI]
+commands:
+  cosmetics:

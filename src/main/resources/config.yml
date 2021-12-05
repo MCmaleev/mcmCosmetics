@@ -1,0 +1,48 @@
+# mcosmetics.admin - команда /cosmetics
+
+Messages:
+  NoPerms: '&c&l› &fУ вас недостаточно прав для использования данной команды!'
+  ConfigReloaded: '&a&l› &fКонфигурация перезагружена!'
+  TitleSent: '&a&l› &fТайтл отправлен.'
+  TitleUsage: '&a&l› &fИспользование: /cosmetics title <title> <subtitle>'
+  ChatSent: '&a&l› &fСообщение отправлено.' # Можно использовать %n для новой строки.
+  ChatUsage: '&a&l› &fИспользование: /cosmetics chat <message>'
+
+Tab:
+  Update: 20 #Задержка обновления таба, измеряется в тиках [20 тиков = 1 секунда | 1 тик = 5 миллисекунд]
+  Header:
+    - '&c&lmcmCosmetics'
+    - ''
+    - '&6%server_online%'
+    - ''
+  Footer:
+    - ''
+    - '&cdeveloped by maleev'
+
+Scoreboard:
+  PageChangeCooldown: 5 #Задержка смены страниц, измеряется в секундах
+  DisabledWorlds: #Чтобы оставить пустым, оставьте в данном поле - []
+    - []
+  Pages:
+    1: #Номер страницы
+      Update: 20 #Задержка обновления борда, измеряется в тиках [20 тиков = 1 секунда | 1 тик = 5 миллисекунд]
+      DisplayName: #Имя страницы, анимация
+        - '&c&lmcmCosmetics'
+        - '&f&lmcmCosmetics'
+      Scores: #Строчки, максимальное количество символов в 1 строке = 32.
+        - ''
+        - '&c&lmcmCosmetics успешно'
+        - '&aзапущен!'
+        - ''
+        - '&fСтраница: &e1&f/&e2'
+    2:
+      Update: 20
+      DisplayName:
+        - '&c&lmcmCosmetics'
+        - '&f&lmcmCosmetics'
+      Scores:
+        - ''
+        - '&fНикнейм: &6%player_name%'
+        - '&fОнлайн: &6%server_online%'
+        - ''
+        - '&fСтраница: &e2&f/&e2'
