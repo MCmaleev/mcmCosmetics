@@ -66,7 +66,7 @@ public class Board
 
     public void startUpdater(BoardTask task, int updateTicks) {
         Objective o = board.getObjective(name);
-        (this.runnable = new BukkitRunnable() {
+        (runnable = new BukkitRunnable() {
             private int i = 0;
             private StringBuilder emptyLine = new StringBuilder(" ");
 
