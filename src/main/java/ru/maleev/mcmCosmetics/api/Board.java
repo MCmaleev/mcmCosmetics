@@ -42,7 +42,7 @@ public class Board
         return scores;
     }
 
-    public void setScoreboard(final Player player) {
+    public void setScoreboard(Player player) {
         board = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective o = board.registerNewObjective(name, "dummy");
         o.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -96,7 +96,7 @@ public class Board
         }).runTaskTimer(Main.getInstance(), 0L, updateTicks);
     }
 
-    public void removeScoreboard(final Player player) {
+    public void removeScoreboard(Player player) {
         if (runnable != null) {
             runnable.cancel();
         }
@@ -106,13 +106,13 @@ public class Board
         player.setScoreboard(board);
     }
 
-    public boolean hasScoreboard(final Player player) {
+    public boolean hasScoreboard(Player player) {
         return player.getScoreboard() == board;
     }
 
     private abstract static class AbstractEventListener implements Listener
     {
-        AbstractEventListener(final Plugin plugin) {
+        AbstractEventListener(Plugin plugin) {
             Bukkit.getPluginManager().registerEvents(this, plugin);
         }
     }
